@@ -80,7 +80,7 @@ Notlar
 ![Abstract Bildirim Diagram](diagrams/Abstractbildirimdiagram.png)
 
 ### Veritabanı Diyagramı
-![Veritabanı Diagram](diagrams/Veritabani.jpg)
+![Veritabanı Diagram](diagrams/Veritabanı.jpg)
 
 Geliştiriciler
 GRUP15
