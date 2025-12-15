@@ -65,6 +65,24 @@ Notlar
 •	Geliştirmeye ve yeni özellikler eklemeye açıktır.
 •	Kod yapısı MVC mimarisine uygun olarak düzenlenmiştir.
 
+## UML Diyagramları
+
+### Use Case Diyagramı
+![Use Case Diagram](diagrams/Usecasediagram.png)
+
+### Sequence Diyagramı
+![Sequence Diagram](diagrams/Sequencediagram.jpg)
+
+### Abstract User Diyagramı
+![Abstract User Diagram](diagrams/Abstractuserdiagram.jpg)
+
+### Abstract Bildirim Diyagramı
+![Abstract Bildirim Diagram](diagrams/Abstractbildirimdiagram.png)
+
+### Veritabanı Diyagramı
+![Veritabanı Diagram](diagrams/Veritabani.jpg)
+
+
 
 
 
