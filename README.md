@@ -1,0 +1,1 @@
+# yurt_yonetim_sistemi
