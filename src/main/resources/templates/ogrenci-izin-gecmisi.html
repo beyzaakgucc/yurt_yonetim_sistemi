@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>İzin Geçmişim</title>
+  <link rel="stylesheet" th:href="@{/css/izin-gecmisi.css}">
+</head>
+<body>
+
+<h2>İzin Geçmişim</h2>
+
+<div class="container">
+
+  <div class="kart">
+    <table>
+      <thead>
+      <tr>
+        <th>Başlangıç</th>
+        <th>Bitiş</th>
+        <th>Neden</th>
+        <th>Durum</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr th:each="izin : ${izinler}">
+        <td th:text="${izin.baslangicTarihi}"></td>
+        <td th:text="${izin.bitisTarihi}"></td>
+        <td th:text="${izin.neden}"></td>
+
+        <td>
+                    <span th:text="${izin.durum}"
+                          th:classappend="
+                          ${izin.durum} == 'Onaylandı' ? 'durum onay' :
+                          (${izin.durum} == 'Beklemede' ? 'durum beklemede' : 'durum reddedildi')">
+                    </span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a href="/ogrenci/anasayfa" class="geri-btn">← Öğrenci Paneline Dön</a>
+
+</div>
+
+</body>
+</html>

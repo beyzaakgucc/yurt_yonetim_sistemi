@@ -1,0 +1,69 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #dbe4ff);
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LOGIN KART */
+.login-box {
+    background-color: #ffffff;
+    padding: 40px 35px;
+    border-radius: 14px;
+    width: 380px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* BAŞLIK */
+.baslik {
+    margin-bottom: 30px;
+    color: #2f4f8f;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccd4e0;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2f4f8f;
+    box-shadow: 0 0 0 1px #2f4f8f33;
+}
+
+/* BUTON */
+button {
+    width: 100%;
+    background-color: #2f4f8f;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #253e73;
+}
+
+/* HATA */
+.hata {
+    margin-top: 18px;
+    color: #c92a2a;
+    font-size: 14px;
+}

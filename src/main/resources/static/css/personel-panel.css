@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+}
+
+h2 {
+    background-color: #2f4f8f;
+    color: white;
+    padding: 18px;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* Karşılama */
+.ust-bilgi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ust-bilgi p {
+    font-size: 16px;
+}
+
+.cikis {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2f4f8f;
+}
+
+.cikis:hover {
+    text-decoration: underline;
+}
+
+/* Kart */
+.kart {
+    background-color: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.kart h3 {
+    color: #2f4f8f;
+}
+
+/* Liste */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+ul li a {
+    display: block;
+    background-color: #eef2ff;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #2f4f8f;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    background-color: #dbe4ff;
+}

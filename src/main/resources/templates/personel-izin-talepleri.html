@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Bekleyen İzin Talepleri</title>
+  <link rel="stylesheet" th:href="@{/css/personel-izinler.css}">
+</head>
+<body>
+
+<h2>📋 Bekleyen İzin Talepleri</h2>
+
+<div class="container">
+
+  <div class="kart">
+
+    <table>
+      <thead>
+      <tr>
+        <th>Öğrenci</th>
+        <th>Başlangıç</th>
+        <th>Bitiş</th>
+        <th>Neden</th>
+        <th>İşlem</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr th:each="izin : ${izinler}">
+        <td>
+          <b th:text="${izin.ogrenci.ad}"></b>
+          <span th:text="${izin.ogrenci.soyad}"></span>
+        </td>
+        <td th:text="${izin.baslangicTarihi}"></td>
+        <td th:text="${izin.bitisTarihi}"></td>
+        <td th:text="${izin.neden}"></td>
+        <td class="islem">
+          <form th:action="@{/personel/izin-onayla/{id}(id=${izin.id})}"
+                method="post">
+            <button class="onay">✅ Onayla</button>
+          </form>
+
+          <form th:action="@{/personel/izin-reddet/{id}(id=${izin.id})}"
+                method="post">
+            <button class="reddet">❌ Reddet</button>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <a href="/personel/anasayfa" class="geri-btn">← Personel Paneli</a>
+
+</div>
+
+</body>
+</html>

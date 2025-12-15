@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Öğrenci Listesi</title>
+    <link rel="stylesheet" th:href="@{/css/personel-ogrenci-listesi.css}">
+</head>
+<body>
+
+<h2>🎓 Öğrenci Listesi</h2>
+
+<div class="container">
+
+    <!-- ARAMA -->
+    <div class="arama">
+        <form method="get" th:action="@{/personel/ogrenciler}">
+            <input type="text"
+                   name="q"
+                   placeholder="Ad veya Soyad Ara"
+                   th:value="${q}">
+            <button type="submit">🔍 Ara</button>
+        </form>
+    </div>
+
+    <!-- TABLO -->
+    <div class="kart">
+        <table>
+            <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Kullanıcı Adı</th>
+                <th>Oda</th>
+                <th>Telefon</th>
+                <th>İşlem</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="ogr : ${ogrenciler}">
+                <td th:text="${ogr.ad}"></td>
+                <td th:text="${ogr.soyad}"></td>
+                <td th:text="${ogr.kullaniciAdi}"></td>
+                <td th:text="${ogr.oda != null ? ogr.oda.odaNumarasi : '—'}"></td>
+                <td th:text="${ogr.telefon}"></td>
+
+                <td>
+                    <a th:href="@{/personel/ogrenci/{id}/oda-ata(id=${ogr.id})}">
+                        <button class="oda-btn">
+                            <span th:if="${ogr.oda == null}">🏠 Odaya Yerleştir</span>
+                            <span th:if="${ogr.oda != null}">🔁 Oda Değiştir</span>
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a href="/personel/anasayfa" class="geri-btn">← Personel Paneli</a>
+
+</div>
+
+</body>
+</html>

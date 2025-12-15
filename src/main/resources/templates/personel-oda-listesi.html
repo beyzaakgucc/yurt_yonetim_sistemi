@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Oda Listesi</title>
+    <link rel="stylesheet" th:href="@{/css/personel-oda-listesi.css}">
+</head>
+<body>
+
+<h2>🏠 Oda Listesi</h2>
+
+<div class="container">
+
+    <div class="kart">
+
+        <table>
+            <thead>
+            <tr>
+                <th>Oda Numarası</th>
+                <th>Kapasite</th>
+                <th>Mevcut Öğrenci</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="oda : ${odalar}">
+                <td th:text="${oda.odaNumarasi}"></td>
+                <td th:text="${oda.kapasite}"></td>
+                <td th:text="${oda.ogrenciler.size()}"></td>
+
+                <td>
+                    <span th:if="${oda.ogrenciler.size() < oda.kapasite}"
+                          class="durum uygun">Uygun</span>
+                    <span th:if="${oda.ogrenciler.size() >= oda.kapasite}"
+                          class="durum dolu">DOLU</span>
+                </td>
+
+                <td>
+                    <form th:action="@{/personel/oda-sil/{id}(id=${oda.id})}"
+                          method="post"
+                          onsubmit="return confirm('Bu odayı silmek istiyor musunuz?');">
+                        <button type="submit" class="sil-btn">🗑 Sil</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <a href="/personel/anasayfa" class="geri-btn">← Personel Paneline Dön</a>
+
+</div>
+
+</body>
+</html>

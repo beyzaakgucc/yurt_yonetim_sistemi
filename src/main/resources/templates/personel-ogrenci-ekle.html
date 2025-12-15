@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Öğrenci Ekle</title>
+  <link rel="stylesheet" th:href="@{/css/personel-form.css}">
+</head>
+<body>
+
+<h2>➕ Öğrenci Ekle</h2>
+
+<div class="container">
+
+  <div class="kart">
+    <form action="/personel/ogrenci-ekle" method="post">
+
+      <label>Ad</label>
+      <input name="ad" placeholder="Ad" required>
+
+      <label>Soyad</label>
+      <input name="soyad" placeholder="Soyad" required>
+
+      <label>Kullanıcı Adı</label>
+      <input name="kullaniciAdi" placeholder="Kullanıcı Adı" required>
+
+      <label>TC Kimlik</label>
+      <input name="tcKimlik" placeholder="TC Kimlik" required>
+
+      <label>Telefon</label>
+      <input name="telefon" placeholder="Telefon" required>
+
+      <button type="submit">Kaydet</button>
+
+    </form>
+  </div>
+
+  <a href="/personel/ogrenciler" class="geri-btn">← Öğrenci Listesi</a>
+
+</div>
+
+</body>
+</html>

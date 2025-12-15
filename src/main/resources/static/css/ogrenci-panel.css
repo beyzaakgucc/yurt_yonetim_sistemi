@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f7c5cc, #e8aeb7);
+    margin: 0;
+}
+
+h2 {
+    background-color: #d47fa6;
+    color: white;
+    padding: 18px;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    width: 85%;
+    margin: 25px auto;
+}
+
+/* ÜST KARŞILAMA */
+.ust-bilgi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #5a2a40;
+}
+
+.cikis-btn {
+    text-decoration: none;
+    font-weight: bold;
+    color: #8b3a62;
+}
+
+.cikis-btn:hover {
+    text-decoration: underline;
+}
+
+/* KART YAPISI */
+.kart {
+    background-color: #fffafa;
+    padding: 22px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+.kart h3 {
+    color: #8b3a62;
+    margin-top: 0;
+}
+
+.kart p {
+    line-height: 1.7;
+    color: #4a4a4a;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #fdecef;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* BUTONLAR */
+button {
+    background-color: #d47fa6;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #bf6a8f;
+}

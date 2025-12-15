@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Oda Ata</title>
+  <link rel="stylesheet" th:href="@{/css/personel-oda-ata.css}">
+</head>
+<body>
+
+<h2>🏠 Öğrenciye Oda Ata</h2>
+
+<div class="container">
+
+  <div class="kart">
+
+    <p class="ogrenci-bilgi">
+      Öğrenci:
+      <b th:text="${ogrenci.ad}"></b>
+      <b th:text="${ogrenci.soyad}"></b>
+    </p>
+
+    <form th:action="@{/personel/ogrenci/{id}/oda-ata(id=${ogrenci.id})}" method="post">
+
+      <label>Oda Seç</label>
+      <select name="odaId" required>
+        <option value="" disabled selected>Oda Seçiniz</option>
+        <option th:each="oda : ${odalar}"
+                th:value="${oda.id}"
+                th:text="${oda.odaNumarasi + ' (Kalan: ' + (oda.kapasite - oda.ogrenciler.size()) + ')'}">
+        </option>
+      </select>
+
+      <button type="submit">✅ Odaya Ata</button>
+    </form>
+
+  </div>
+
+  <a href="/personel/ogrenciler" class="geri-btn">← Öğrenci Listesine Dön</a>
+
+</div>
+
+</body>
+</html>

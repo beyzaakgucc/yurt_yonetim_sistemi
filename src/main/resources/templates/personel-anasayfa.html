@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Personel Paneli</title>
+    <link rel="stylesheet" th:href="@{/css/personel-panel.css}">
+</head>
+<body>
+
+<h2>Personel Paneli</h2>
+
+<div class="container">
+
+    <!-- ÜST KARŞILAMA -->
+    <div class="ust-bilgi">
+        <p>
+            Hoş geldin, <b th:text="${kullanici.ad}"></b>
+        </p>
+
+        <a href="/logout">Çıkış Yap</a>
+    </div>
+
+    <!-- YÖNETİM İŞLEMLERİ -->
+    <div class="kart">
+        <h3>Yönetim İşlemleri</h3>
+
+        <ul>
+            <li>
+                <a href="/personel/ogrenciler">
+                    👨‍🎓 Öğrencileri Listele
+                </a>
+            </li>
+
+            <li>
+                <a href="/personel/ogrenci-ekle">
+                    ➕ Yeni Öğrenci Ekle
+                </a>
+            </li>
+
+            <li>
+                <a href="/personel/odalar">
+                    🏠 Odaları Listele
+                </a>
+            </li>
+
+            <li>
+                <a href="/personel/oda-ekle">
+                    ➕ Yeni Oda Ekle
+                </a>
+            </li>
+
+            <li>
+                <a href="/personel/izin-talepleri">
+                    📋 Bekleyen İzin Talepleri
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

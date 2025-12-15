@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>İzin Talebi Oluştur</title>
+    <link rel="stylesheet" th:href="@{/css/izin-olustur.css}">
+</head>
+<body>
+
+<h2>İzin Talebi Oluştur</h2>
+
+<div class="container">
+
+    <div class="kart">
+        <form th:action="@{/ogrenci/izin-olustur}" method="post">
+
+            <label>İzin Başlangıç Tarihi</label>
+            <input type="date" name="baslangicTarihi" required>
+
+            <label>İzin Bitiş Tarihi</label>
+            <input type="date" name="bitisTarihi" required>
+
+            <label>İzin Nedeni</label>
+            <textarea name="neden" rows="4" required></textarea>
+
+            <button type="submit">İzin Talebi Gönder</button>
+
+        </form>
+    </div>
+
+    <a href="/ogrenci/anasayfa" class="geri-btn">← Öğrenci Paneline Dön</a>
+
+</div>
+
+</body>
+</html>

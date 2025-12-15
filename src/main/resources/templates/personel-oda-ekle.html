@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Oda Ekle</title>
+    <link rel="stylesheet" th:href="@{/css/personel-form.css}">
+</head>
+<body>
+
+<h2>➕ Oda Ekle</h2>
+
+<div class="container">
+
+    <div class="kart">
+        <form action="/personel/oda-ekle" method="post">
+
+            <label>Oda Numarası</label>
+            <input name="odaNumarasi" placeholder="Örn: 203" required>
+
+            <label>Kapasite</label>
+            <input type="number" name="kapasite" placeholder="Örn: 4" required>
+
+            <button type="submit">Oluştur</button>
+
+        </form>
+    </div>
+
+    <a href="/personel/odalar" class="geri-btn">← Oda Listesi</a>
+
+</div>
+
+</body>
+</html>

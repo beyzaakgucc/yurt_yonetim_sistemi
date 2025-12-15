@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Yurt Sistemi - Giriş</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+<body>
+
+<div class="login-box">
+
+    <h2 class="baslik">Giriş Yap</h2>
+
+    <form th:action="@{/login}" method="post">
+        <input type="text" name="kimlik"
+               placeholder="TC / E-posta / Kullanıcı Adı" required>
+
+        <input type="password" name="sifre"
+               placeholder="Şifre" required>
+
+        <button type="submit">Giriş</button>
+    </form>
+
+    <p th:if="${hata}" th:text="${hata}" class="hata"></p>
+
+</div>
+
+</body>
+</html>

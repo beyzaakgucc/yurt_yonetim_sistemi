@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Öğrenci Ana Sayfa</title>
+    <link rel="stylesheet" th:href="@{/css/ogrenci-panel.css}">
+</head>
+<body>
+
+<h2>Öğrenci Paneli</h2>
+
+<div class="container">
+
+    <div class="ust-bilgi">
+        <p>
+            Hoş geldin, <b th:text="${kullanici.ad}"></b> 🌸
+        </p>
+        <a href="/logout">Çıkış Yap</a>
+    </div>
+
+    <!-- PROFİLİM -->
+    <div class="kart">
+        <h3>👤 Profilim</h3>
+
+        <form th:action="@{/ogrenci/profil-guncelle}" method="post">
+
+            <p>
+                <b>Ad:</b>
+                <input type="text" name="ad" th:value="${kullanici.ad}">
+            </p>
+
+            <p>
+                <b>Soyad:</b>
+                <input type="text" name="soyad" th:value="${kullanici.soyad}">
+            </p>
+
+            <p>
+                <b>Kullanıcı Adı:</b>
+                <input type="text" name="kullaniciAdi" th:value="${kullanici.kullaniciAdi}">
+            </p>
+
+            <p>
+                <b>E-posta:</b>
+                <input type="email" name="eposta" th:value="${kullanici.eposta}">
+            </p>
+
+            <p>
+                <b>Telefon:</b>
+                <input type="text" name="telefon" th:value="${kullanici.telefon}">
+            </p>
+
+            <p>
+                <b>Adres:</b>
+                <input type="text" name="adres" th:value="${kullanici.adres}">
+            </p>
+
+            <p>
+                <b>TC Kimlik:</b>
+                <input type="text" th:value="${kullanici.tcKimlik}" disabled>
+            </p>
+
+            <button type="submit">💾 Bilgilerimi Güncelle</button>
+        </form>
+
+    </div>
+
+    <!-- ODA BİLGİLERİ -->
+    <div class="kart">
+        <h3>🏠 Oda Bilgileri</h3>
+
+        <div th:if="${oda != null}">
+            <p><b>Oda Numarası:</b> <span th:text="${oda.odaNumarasi}"></span></p>
+            <p><b>Kapasite:</b> <span th:text="${oda.kapasite}"></span></p>
+        </div>
+
+        <div th:if="${oda == null}">
+            <p>Henüz bir odaya atanmadınız.</p>
+        </div>
+    </div>
+
+    <!-- AYNI ODA ÖĞRENCİLER -->
+    <h3>🏠 Oda Arkadaşları</h3>
+
+    <p th:if="${#lists.isEmpty(odaArkadaslari)}">
+        Odada başka kalan yok
+    </p>
+
+    <table th:if="${!#lists.isEmpty(odaArkadaslari)}" border="1">
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Telefon</th>
+        </tr>
+        <tr th:each="o : ${odaArkadaslari}">
+            <td th:text="${o.ad}"></td>
+            <td th:text="${o.soyad}"></td>
+            <td th:text="${o.telefon}"></td>
+        </tr>
+    </table>
+
+    <!-- İZİN İŞLEMLERİ -->
+    <div class="kart">
+        <h3>✈️ İzin İşlemleri</h3>
+
+        <a href="/ogrenci/izin-talebi">
+            <button>➕ İzin Talebi Oluştur</button>
+        </a>
+
+        <a href="/ogrenci/izin-gecmisi">
+            <button>📜 İzin Geçmişim</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
