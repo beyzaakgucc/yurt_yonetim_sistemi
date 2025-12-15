@@ -82,6 +82,12 @@ Notlar
 ### Veritabanı Diyagramı
 ![Veritabanı Diagram](diagrams/Veritabani.jpg)
 
+Geliştiriciler
+GRUP15
+Beyzanur AKGÜÇ
+Zülal ÖZCAN  https://github.com/Zulalzcn
+Zelal SALMAN  https://github.com/ZelalSalman
+
 
 
 
